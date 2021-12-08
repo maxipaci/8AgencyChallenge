@@ -1,0 +1,26 @@
+{
+  "name": "8agency",
+  "version": "1.0.0",
+  "description": "8agency's challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node App.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxipaci/8AgencyChallenge.git"
+  },
+  "author": "maximiliano paci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxipaci/8AgencyChallenge/issues"
+  },
+  "homepage": "https://github.com/maxipaci/8AgencyChallenge#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}

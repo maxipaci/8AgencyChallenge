@@ -1,0 +1,16 @@
+# Backend
+Backend/node_modules/
+Backend/.env
+Backend/package-lock.json
+
+# Frontend
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
+frontend/coverage
+frontend/build
+frontend/.DS_Store
+frontend/.env
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
