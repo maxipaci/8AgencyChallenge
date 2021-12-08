@@ -4,7 +4,7 @@
   "description": "8agency's challenge",
   "main": "index.js",
   "scripts": {
-    "start": "node App.js",
+    "start": "node Api/App.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
