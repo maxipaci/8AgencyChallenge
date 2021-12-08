@@ -1,8 +1,10 @@
 const InMemoryAttendeeRepo = require("./InMemory/InMemoryAttendeeRepo");
+const InMemoryCountryRepo = require("./InMemory/InMemoryCountryRepo");
 
 class RepositoryProvider {
     constructor() {
-        this.attendeeRepo = new InMemoryAttendeeRepo();       
+        this.attendeeRepo = new InMemoryAttendeeRepo();    
+        this.countryRepo = new InMemoryCountryRepo();    
     }
 
     static getInstance() {
@@ -14,6 +16,10 @@ class RepositoryProvider {
 
     getAttendeeRepo() {
         return this.attendeeRepo;
+    }
+
+    getAttendeeRepo() {
+        return this.countryRepo;
     }
 
 }
