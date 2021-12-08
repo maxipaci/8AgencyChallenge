@@ -24,7 +24,10 @@ const attendeeSchema = yup.object({
     job: yup
       .string()
       .required()
-      .max(200)
+      .max(200),
+    idCountry: yup
+      .number()
+      .required(),
   })
 })
 

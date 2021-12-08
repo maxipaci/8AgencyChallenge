@@ -28,7 +28,15 @@ class AttendeeService{
     async createAttendee(attendee){
         attendee.id = await this.attendeesRepo.nextId();
         await this.attendeesRepo.add(attendee);
-        return attendee;
+        const country = await this.countryRepo.getById(attendee.idCountry);
+        return new AttendeeDto(
+            attendee.id, 
+            attendee.firstName, 
+            attendee.lastName, 
+            attendee.email, 
+            attendee.phone, 
+            attendee.job, 
+            country.name);
     }
 }
 
