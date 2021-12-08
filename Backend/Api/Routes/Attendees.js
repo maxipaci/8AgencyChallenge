@@ -2,10 +2,12 @@ const express = require('express');
 const router = express.Router();
 const Response = require('../../Core/Dtos/Response');
 const ServiceProvider = require('../../Core/Services/ServiceProvider').getInstance();
+const AttendeeService = ServiceProvider.attendeeService();
 
-router.post('/Attendees', function (req, res, next) {
+router.post('/Attendees',async function (req, res, next) {
     try {
-        res.status(201).send(new Response(true, 'Attendee succesfully created'));
+        const Attendee = await AttendeeService.createAttendee(req.body);
+        res.status(201).send(new Response(true, 'Attendee succesfully created', { Attendee }));
     } catch (e) {
         res.status(500).send(new Response(false, 'Something went wrong ! '));
     }
@@ -13,10 +15,10 @@ router.post('/Attendees', function (req, res, next) {
 
 router.get('/Attendees', async function (req, res, next) {
     try {
-        const Attendees = await ServiceProvider.attendeeService().getAttendees();
+        const Attendees = await AttendeeService.getAttendees();
         res.status(200).send(new Response(true, '', { Attendees }));
     } catch (e) {
-        res.status(500).send(new Response(false, 'Something went wrong ! ', { msg: e.message }));
+        res.status(500).send(new Response(false, 'Something went wrong ! '));
     }
 });
 

@@ -10,10 +10,10 @@ class AttendeeService{
         return attendees;
     }
 
-    async addOperation(operation){
-        operation.id = await this.operationsRepo.nextId();
-        await this.operationsRepo.add(operation);
-        return operation;
+    async createAttendee(attendee){
+        attendee.Id = await this.attendeesRepo.nextId();
+        await this.attendeesRepo.add(attendee);
+        return attendee;
     }
 }
 

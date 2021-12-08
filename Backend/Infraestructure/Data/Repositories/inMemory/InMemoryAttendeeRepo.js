@@ -10,11 +10,11 @@ class InMemoryAttendeeRepo {
     }
 
     getById(id){
-        return this.attendees.find(op => op.id == id);
+        return this.attendees.find(op => op.Id == id);
     }
 
     nextId() {
-        return this.attendees.length > 0 ? this.attendees[this.attendees.length - 1].id + 1 : 1;
+        return this.attendees.length > 0 ? this.attendees[this.attendees.length - 1].Id + 1 : 1;
     }
 
     getAll(){
@@ -26,12 +26,12 @@ class InMemoryAttendeeRepo {
     }
 
     delete(id){
-        this.attendees = this.attendees.filter(at => at.id != id);
+        this.attendees = this.attendees.filter(at => at.Id != id);
     }
 
     update(attendee){
         this.attendees = this.attendees.map(at => {
-            if (at.id == attendee.id) {
+            if (at.Id == attendee.Id) {
                 return new Attendee(
                     attendee.Id,
                     attendee.FirstName, 
