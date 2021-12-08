@@ -11,7 +11,7 @@ class Provider {
     }
 
     attendeeService() {
-        return new AttendeeService(ReposProvider.getAttendeeRepo());
+        return new AttendeeService(ReposProvider.getAttendeeRepo(), ReposProvider.getCountryRepo());
     }
 
     countryService() {

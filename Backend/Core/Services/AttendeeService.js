@@ -1,13 +1,28 @@
+const AttendeeDto = require('../Dtos/Attendee.js');
 
 class AttendeeService{
 
-    constructor(attendeesRepo){
+    constructor(attendeesRepo, countryRepo){
         this.attendeesRepo = attendeesRepo;
+        this.countryRepo = countryRepo;
     }
 
     async getAttendees(){
         let attendees = await this.attendeesRepo.getAll();
-        return attendees;
+
+        let attendeesDtos = await Promise.all(attendees.map(async (att) => {
+            var country = await this.countryRepo.getById(att.idCountry);
+            return new AttendeeDto(
+                att.id, 
+                att.firstName, 
+                att.lastName, 
+                att.email, 
+                att.phone, 
+                att.job, 
+                country.name);
+        }))
+
+        return attendeesDtos.reverse()
     }
 
     async createAttendee(attendee){

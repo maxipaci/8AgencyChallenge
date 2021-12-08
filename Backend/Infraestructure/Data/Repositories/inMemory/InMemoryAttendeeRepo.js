@@ -3,9 +3,9 @@ const Attendee = require('../../../../Core/Models/Attendee');
 class InMemoryAttendeeRepo {
     constructor() {
         this.attendees = [
-            new Attendee(1, "Pablo", "Sanchez", "pablo@test.com", "1123456789", "Programador"),
-            new Attendee(2, "Juan", "Perez", "test@test.com", "1123456789", "Programador"),
-            new Attendee(3, "Pedro", "Perez", "test@test.com", "1123456789", "Programador")
+            new Attendee(1, "Pablo", "Sanchez", "pablo@test.com", "1123456789", "Programador", 1),
+            new Attendee(2, "Juan", "Perez", "test@test.com", "1123456789", "Programador", 2),
+            new Attendee(3, "Pedro", "Perez", "test@test.com", "1123456789", "Programador", 3)
         ];
     }
 
