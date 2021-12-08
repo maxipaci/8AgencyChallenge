@@ -10,11 +10,11 @@ class InMemoryCountryRepo {
     }
 
     getById(id){
-        return this.contries.find(op => op.Id == id);
+        return this.contries.find(op => op.id == id);
     }
 
     nextId() {
-        return this.contries.length > 0 ? this.contries[this.contries.length - 1].Id + 1 : 1;
+        return this.contries.length > 0 ? this.contries[this.contries.length - 1].id + 1 : 1;
     }
 
     getAll(){

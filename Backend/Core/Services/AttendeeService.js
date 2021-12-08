@@ -11,7 +11,7 @@ class AttendeeService{
     }
 
     async createAttendee(attendee){
-        attendee.Id = await this.attendeesRepo.nextId();
+        attendee.id = await this.attendeesRepo.nextId();
         await this.attendeesRepo.add(attendee);
         return attendee;
     }

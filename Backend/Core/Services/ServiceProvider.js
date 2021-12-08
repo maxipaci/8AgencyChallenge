@@ -1,4 +1,5 @@
 const AttendeeService = require('./AttendeeService.js');
+const CountryService = require('./CountryService.js');
 const ReposProvider = require('../../Infraestructure/Data/Repositories/RepositoriesProvider.js').getInstance();
 
 class Provider {
@@ -11,6 +12,10 @@ class Provider {
 
     attendeeService() {
         return new AttendeeService(ReposProvider.getAttendeeRepo());
+    }
+
+    countryService() {
+        return new CountryService(ReposProvider.getCountryRepo());
     }
 
 }

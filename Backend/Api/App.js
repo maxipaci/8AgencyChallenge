@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const cors = require('cors');
 const attendeesRoute = require('./routes/Attendees.js');
+const countriesRoute = require('./routes/Countries.js');
 require('dotenv').config()
 
 const apiPort = process.env.PORT || 5000;
@@ -25,6 +26,7 @@ const requestLogger = function (req, res, next) {
 app.use(requestLogger);
 
 app.use('/', attendeesRoute);
+app.use('/', countriesRoute);
 
 app.get('/', function (req, res, next) {
     res.send({ version: 1.0 });

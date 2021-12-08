@@ -18,7 +18,7 @@ class RepositoryProvider {
         return this.attendeeRepo;
     }
 
-    getAttendeeRepo() {
+    getCountryRepo() {
         return this.countryRepo;
     }
 

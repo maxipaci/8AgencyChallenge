@@ -1,10 +1,10 @@
 class Country{
-    Id;
-    Name;
+    id;
+    name;
 
     constructor(id, name){
-        this.Id = id;
-        this.Name = name;
+        this.id = id;
+        this.name = name;
     }
 }
 
