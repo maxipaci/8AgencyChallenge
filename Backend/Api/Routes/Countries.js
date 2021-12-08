@@ -3,8 +3,10 @@ const router = express.Router();
 const Response = require('../../Core/Dtos/Response');
 const ServiceProvider = require('../../Core/Services/ServiceProvider').getInstance();
 const CountryService = ServiceProvider.countryService();
+const CountryValidationSchema = require('../ValidationSchemas/CountrySchema');
+const Validator = require('../Middlewares/Validator');
 
-router.post('/Countries', async function (req, res, next) {
+router.post('/Countries', Validator(CountryValidationSchema),  async function (req, res, next) {
     try {
         const Country = await CountryService.createCountry(req.body);
         res.status(201).send(new Response(true, 'Country succesfully created', { Country }));
