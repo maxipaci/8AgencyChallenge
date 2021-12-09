@@ -1,3 +1,118 @@
 .Home{
-    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10%;
+}
+
+.Content{
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.Section{
+
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Section>p{
+    font-size: 1vw;
+    color: #405457;
+    font-size: 600;
+}
+
+.Form{
+
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Form>form>p{
+    font-size: 1.5vw;
+    font-weight: 600;
+    color: #124034;
+}
+
+.Form>form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    background-color: #F8F9F9;
+}
+
+.Form-Group{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+}
+
+.Form-Group>label{
+    font-size: 1vw;
+    color: #124034;
+    font-weight: 600;
+}
+
+.Form-Group>input{
+    height: 2.35vw;
+    font-size: 1vw;
+}
+
+.Form-Group>select{
+    height: 2.35vw;
+    font-size: 1vw;
+}
+
+.boton{
+    margin-top: 3%;
+    width: 80%;
+    font-size: 1vw;
+    height: 3vw;
+    color: white;
+    background-color: #124034;
+}
+
+.member{
+    display: flex;
+    flex-direction: row;
+    height: 5vw;
+    margin-top: 4%;
+}
+
+.member-pic{
+    display: flex;
+    width: 15%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgb(228, 228, 228);
+}
+
+.member-info{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    flex-direction: column;
+    margin-left: 2%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.member-name{
+    font-size: 1.5vw;
+    color: #02363D ;
+    font-weight: 600;
+}
+
+.member-rol{
+    font-size: 1vw;
+    color: #02363D ;
 }

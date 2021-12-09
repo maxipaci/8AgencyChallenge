@@ -20,21 +20,24 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    color: #02363D;
 }
 
 .TextArea>h1{
-    font-size: 2vw
+    font-size: 2vw;
+    font-weight: 900;
 }
 
 .TextArea>p{
-    font-size: 1vw
+    font-size: 1vw;
+    font-weight: 650;
 }
 
 .Webinar{
     font-size: 1vw;
     padding: 1vw;
     color: #FFFFFF;
-    background-color: orangered;
+    background-color: #C05100;
     border-radius: 5%;
     margin-top: 5%;
 }
