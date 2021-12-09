@@ -79,6 +79,7 @@
     height: 3vw;
     color: white;
     background-color: #124034;
+    cursor: pointer;
 }
 
 .member{
@@ -115,4 +116,10 @@
 .member-rol{
     font-size: 1vw;
     color: #02363D ;
+}
+
+.ErrorLabel{
+    height: 1vw;
+    font-size: 1vw;
+    color: red;
 }
