@@ -4,7 +4,7 @@ import './Header.css';
 function Header() {
 
   return (
-    <div className="Home" >
+    <div className="Header" >
       <img src="/images/assets/HeaderBackground.svg" alt="Wave"/>
       <div className="Webinar" >WEBINAR</div>
       <div className="TextArea">
