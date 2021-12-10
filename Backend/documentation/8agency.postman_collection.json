@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "2c1ae5c6-efcb-4185-bfec-0b2fd24a56a5",
+		"name": "8agency",
+		"description": "Express JS API for the 8agency's challenge.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Attendees",
+			"item": [
+				{
+					"name": "CreateAttendee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"prueba\",\r\n    \"lastName\" : \"testeo\",\r\n    \"email\" : \"testeo@testeo.com\",\r\n    \"phone\": \"1134562345\",\r\n    \"job\": \"panadero\",\r\n    \"idCountry\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ENV_URL}}/Attendees",
+							"host": [
+								"{{ENV_URL}}"
+							],
+							"path": [
+								"Attendees"
+							]
+						},
+						"description": "This endpoint creates a attendee register in the database."
+					},
+					"response": [
+						{
+							"name": "CreateAttendee",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\" : \"prueba\",\r\n    \"lastName\" : \"testeo\",\r\n    \"email\" : \"testeo@testeo.com\",\r\n    \"phone\": \"1134562345\",\r\n    \"job\": \"panadero\",\r\n    \"idCountry\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENV_URL}}/Attendees",
+									"host": [
+										"{{ENV_URL}}"
+									],
+									"path": [
+										"Attendees"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "212"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d4-tFQlCTnHvtGZGDpvl216o7B7CXU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 14:13:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Success\": true,\n    \"Message\": \"Attendee succesfully created\",\n    \"Data\": {\n        \"Attendee\": {\n            \"id\": 4,\n            \"firstName\": \"prueba\",\n            \"lastName\": \"testeo\",\n            \"email\": \"testeo@testeo.com\",\n            \"phone\": \"1134562345\",\n            \"job\": \"panadero\",\n            \"country\": \"Mexico\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getAllAttendees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENV_URL}}/Attendees",
+							"host": [
+								"{{ENV_URL}}"
+							],
+							"path": [
+								"Attendees"
+							]
+						},
+						"description": "This endpoint return all the attendees registered in the database."
+					},
+					"response": [
+						{
+							"name": "getAllAttendees",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENV_URL}}/Attendees",
+									"host": [
+										"{{ENV_URL}}"
+									],
+									"path": [
+										"Attendees"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "588"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24c-CGn/3WpMSdhx6wozaojaxYZJeb4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 14:13:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Success\": true,\n    \"Message\": \"\",\n    \"Data\": {\n        \"Attendees\": [\n            {\n                \"id\": 1,\n                \"firstName\": \"Pablo\",\n                \"lastName\": \"Sanchez\",\n                \"email\": \"pablo@test.com\",\n                \"phone\": \"1123456789\",\n                \"job\": \"Programador\",\n                \"country\": \"Argentina\"\n            },\n            {\n                \"id\": 2,\n                \"firstName\": \"Juan\",\n                \"lastName\": \"Perez\",\n                \"email\": \"test@test.com\",\n                \"phone\": \"1123456789\",\n                \"job\": \"Programador\",\n                \"country\": \"Brasil\"\n            },\n            {\n                \"id\": 3,\n                \"firstName\": \"Pedro\",\n                \"lastName\": \"Perez\",\n                \"email\": \"test@test.com\",\n                \"phone\": \"1123456789\",\n                \"job\": \"Programador\",\n                \"country\": \"Mexico\"\n            },\n            {\n                \"id\": 4,\n                \"firstName\": \"prueba\",\n                \"lastName\": \"testeo\",\n                \"email\": \"testeo@testeo.com\",\n                \"phone\": \"1134562345\",\n                \"job\": \"panadero\",\n                \"country\": \"Mexico\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "All the endpoints related to the attendees."
+		},
+		{
+			"name": "Countries",
+			"item": [
+				{
+					"name": "CreateCountry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Peru\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ENV_URL}}/Countries",
+							"host": [
+								"{{ENV_URL}}"
+							],
+							"path": [
+								"Countries"
+							]
+						},
+						"description": "This endpoint creates a country register in the database."
+					},
+					"response": [
+						{
+							"name": "CreateCountry",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Peru\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENV_URL}}/Countries",
+									"host": [
+										"{{ENV_URL}}"
+									],
+									"path": [
+										"Countries"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"62-ko2KFwc682fGKrBR2Y7Q38WPtyY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 14:13:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Success\": true,\n    \"Message\": \"Country succesfully created\",\n    \"Data\": {\n        \"Country\": {\n            \"name\": \"Peru\",\n            \"id\": 4\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GetCountries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENV_URL}}/Countries",
+							"host": [
+								"{{ENV_URL}}"
+							],
+							"path": [
+								"Countries"
+							]
+						},
+						"description": "This endpoint return all the countries registered in the database."
+					},
+					"response": [
+						{
+							"name": "GetCountries",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENV_URL}}/Countries",
+									"host": [
+										"{{ENV_URL}}"
+									],
+									"path": [
+										"Countries"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "153"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"99-8Jls2hvnAz9xloDJprrPhvsFdTo\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 14:13:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Success\": true,\n    \"Message\": \"\",\n    \"Data\": {\n        \"Countries\": [\n            {\n                \"id\": 1,\n                \"name\": \"Argentina\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Brasil\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Mexico\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Peru\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "All the endpoints related to the countries."
+		},
+		{
+			"name": "getVersion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ENV_URL}}/",
+					"host": [
+						"{{ENV_URL}}"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "This endpoint returns the API current version."
+			},
+			"response": [
+				{
+					"name": "getVersion",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENV_URL}}/",
+							"host": [
+								"{{ENV_URL}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "13"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d-qenF/intzk//g1K7geOu7E6kpw4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Dec 2021 14:13:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"version\": 1\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ENV_URL",
+			"value": "http://127.0.0.1:5000"
+		}
+	]
+}
