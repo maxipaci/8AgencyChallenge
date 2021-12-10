@@ -3,6 +3,7 @@ import './Home.css';
 import { ValidateName, ValidateEmail, ValidatePhone, ValidateJob } from '../../Utils/Validator';
 import { SendRequest } from '../../Http/HttpClient';
 import { HttpActions } from '../../Http/HttpActions';
+import Loader from '../../Components/Loader/Loader';
 import Swal from 'sweetalert2';
 
 const members = [
@@ -24,6 +25,7 @@ function Home() {
     const [jobError, setJobError] = React.useState('');
     const [job, setJob] = React.useState('');
     const [idCountry, setIdCountry] = React.useState(1);
+    const [isLoading, setIsLoading] = React.useState(false);
     const [countries, setCountries] = React.useState(
         [
             {id: 1, name: "Argentina"},
@@ -35,6 +37,7 @@ function Home() {
     useEffect(() => {
         const getCountries = async () => {
           try {
+            setIsLoading(true);
             const response = await SendRequest(
                 HttpActions.GET,
                 'Countries', 
@@ -44,6 +47,8 @@ function Home() {
             }
           } catch (e) {
             console.log(e);
+          } finally {
+            setIsLoading(false);
           }
         }
         getCountries()
@@ -222,7 +227,9 @@ function Home() {
                     </input>
                     <div className="ErrorLabel">{jobError}</div>
                         </div>
-                    <button className="boton" type='submit' style={!isValidForm() ? {cursor: 'auto', backgroundColor: 'gray'} : {}} disabled={!isValidForm()}>Inscribirse</button>
+                    <button className="boton" type='submit' style={!isValidForm() ? {cursor: 'auto', backgroundColor: 'gray'} : {}} disabled={!isValidForm()}>
+                    { isLoading ? <Loader visible={isLoading} width={'1.5vw'} height={'1.5vw'} /> : 'Inscribirse' }
+                    </button>
                 </form>
             </div>
         </div>

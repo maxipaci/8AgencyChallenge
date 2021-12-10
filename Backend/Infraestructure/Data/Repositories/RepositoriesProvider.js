@@ -1,6 +1,6 @@
 require('dotenv').config()
-const InMemoryAttendeeRepo = require("./InMemory/InMemoryAttendeeRepo");
-const InMemoryCountryRepo = require("./InMemory/InMemoryCountryRepo");
+const InMemoryAttendeeRepo = require("./inMemory/InMemoryAttendeeRepo");
+const InMemoryCountryRepo = require("./inMemory/InMemoryCountryRepo");
 const SequelizeAttendeeRepo = require("./Sequelize/SequelizeAttendeeRepo");
 const SequelizeCountryRepo = require("./Sequelize/SequelizeCountryRepo");
 

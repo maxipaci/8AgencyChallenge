@@ -2,8 +2,8 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
 const cors = require('cors');
-const attendeesRoute = require('./routes/Attendees.js');
-const countriesRoute = require('./routes/Countries.js');
+const attendeesRoute = require('./Routes/Attendees.js');
+const countriesRoute = require('./Routes/Countries.js');
 require('dotenv').config()
 
 const apiPort = process.env.PORT || 5000;
