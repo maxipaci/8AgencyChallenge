@@ -1,5 +1,5 @@
 # 8agency's challenge
-Currently deployed on https://61b2da960619ce96746a3f1b--ecstatic-franklin-fb0c23.netlify.app/
+Currently deployed on https://61b364dbf4976e2a36c7506d--ecstatic-franklin-fb0c23.netlify.app/
 ## Backend
 The Express js API of the project its located under the ./Backend directory.
 ### Setup

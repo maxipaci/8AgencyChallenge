@@ -122,6 +122,7 @@ function Home() {
 
     const onSubmit = async (e) => {
         try {
+            setIsLoading(true);
             e.preventDefault();
             const payload = {
                 firstName: firstName,
@@ -149,6 +150,8 @@ function Home() {
               text,
             })
             console.log(e);
+        } finally {
+            setIsLoading(false);
         }
         
     }
