@@ -1,9 +1,10 @@
 const InMemoryAttendeeRepo = require("./InMemory/InMemoryAttendeeRepo");
 const InMemoryCountryRepo = require("./InMemory/InMemoryCountryRepo");
+const SequelizeAttendeeRepo = require("./Sequelize/SequelizeAttendeeRepo");
 
 class RepositoryProvider {
     constructor() {
-        this.attendeeRepo = new InMemoryAttendeeRepo();    
+        this.attendeeRepo = new SequelizeAttendeeRepo();//new InMemoryAttendeeRepo();    
         this.countryRepo = new InMemoryCountryRepo();    
     }
 
