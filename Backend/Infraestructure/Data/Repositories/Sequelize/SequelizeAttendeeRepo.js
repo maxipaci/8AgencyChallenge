@@ -1,4 +1,3 @@
-const { QueryTypes } = require('sequelize');
 const { Attendee } = require('../../../../models')
 
 class SequelizeAttendeeRepo {
