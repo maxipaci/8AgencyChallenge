@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:5000/'
+const baseUrl = 'http://192.168.0.92:5000/'
 
 export async function SendRequest(method, relativeUrl, data) {
   const headers = {}
