@@ -7,6 +7,7 @@ const countriesRoute = require('./routes/Countries.js');
 require('dotenv').config()
 
 const apiPort = process.env.PORT || 5000;
+const dbType = process.env.DB_TYPE || 'inMemory';
 const corsOptions = {
     origin: '*',
 };
@@ -33,6 +34,6 @@ app.get('/', function (req, res, next) {
 });
 
 app.listen(apiPort, () => {   
-    console.log(`app listening on port ${apiPort}`);
+    console.log(`app listening on port ${apiPort} with ${dbType} database`);
 });
 

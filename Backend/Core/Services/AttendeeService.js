@@ -22,7 +22,7 @@ class AttendeeService{
                 country.name);
         }))
 
-        return attendeesDtos.reverse()
+        return attendeesDtos;
     }
 
     async createAttendee(attendee){

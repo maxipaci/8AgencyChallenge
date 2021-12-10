@@ -1,3 +1,4 @@
+require('dotenv').config()
 const InMemoryAttendeeRepo = require("./InMemory/InMemoryAttendeeRepo");
 const InMemoryCountryRepo = require("./InMemory/InMemoryCountryRepo");
 const SequelizeAttendeeRepo = require("./Sequelize/SequelizeAttendeeRepo");
@@ -5,8 +6,13 @@ const SequelizeCountryRepo = require("./Sequelize/SequelizeCountryRepo");
 
 class RepositoryProvider {
     constructor() {
-        this.attendeeRepo = new SequelizeAttendeeRepo();//new InMemoryAttendeeRepo();    
-        this.countryRepo = new SequelizeCountryRepo();//new InMemoryCountryRepo();    
+        if (process.env.DB_TYPE === 'sequelize') {
+            this.attendeeRepo = new SequelizeAttendeeRepo();   
+            this.countryRepo = new SequelizeCountryRepo();
+        } else {
+            this.attendeeRepo = new InMemoryAttendeeRepo();
+            this.countryRepo = new InMemoryCountryRepo();
+        }          
     }
 
     static getInstance() {

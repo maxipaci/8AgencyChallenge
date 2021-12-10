@@ -1,3 +1,4 @@
+const Country = require("../Models/Country");
 
 class CountryService{
 
@@ -7,7 +8,12 @@ class CountryService{
 
     async getCountries(){
         let countries = await this.countryRepo.getAll();
-        return countries;
+        let mappedCountries = await Promise.all(countries.map(async (cont) => {
+            return new Country(
+                cont.id, 
+                cont.name);
+        }))
+        return mappedCountries;
     }
 
     async createCountry(country){
